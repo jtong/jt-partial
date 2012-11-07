@@ -6,10 +6,10 @@ require 'jt-partial/version'
 Gem::Specification.new do |gem|
   gem.name          = "jt-partial"
   gem.version       = Jt::Partial::VERSION
-  gem.authors       = ["TODO: Write your name"]
-  gem.email         = ["TODO: Write your email address"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.authors       = ["jtong"]
+  gem.email         = ["tj19832@gmail.com"]
+  gem.description   = %q{generate one page application html}
+  gem.summary       = %q{partial for haml}
   gem.homepage      = ""
 
   gem.files         = `git ls-files`.split($/)
