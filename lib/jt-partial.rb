@@ -1,8 +1,8 @@
 require "jt-partial/version"
 require "haml"
 
-#js
 
+#js
 def base_js(file)
   is_base_file = file.include?( "application.js" ) || file.include?("pages.js")
   puts file
@@ -22,8 +22,18 @@ def include_js
   template
 end
 
+#haml base
 def haml_render(template_path, args = {})
   Haml::Engine.new(File.read(template_path)).render Object.new, args
+end
+
+#page_context
+@@page_context = {}
+
+def page page_name
+  @@page_context[:name] = page_name
+  page_path = "pages/_#{page_name}.haml"
+  haml_render page_path
 end
 
 #partial
