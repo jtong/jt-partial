@@ -4,6 +4,10 @@ def render(partial)
   haml_render(partial_path)
 end
 
+def html(partial)
+  File.read(partial)
+end
+
 def generate(template_name)
   template_path = "_#{template_name}.haml"
   output = haml_render(template_path)
