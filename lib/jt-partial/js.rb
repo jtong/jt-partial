@@ -7,7 +7,8 @@ end
 def include_js
   template_path = File.expand_path('../', __FILE__)
   template = ""
-  Dir.glob "js/*.js" do |file|
+  js_files = File.join("js","**", "*.js")
+  Dir.glob js_files do |file|
     if ! base_js file
       template += haml_render "#{template_path}/_js_script_tag.haml",  {js_file_path: file}
     end
