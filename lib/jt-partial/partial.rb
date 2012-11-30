@@ -1,5 +1,5 @@
 #partial
-def render(partial)
+def partial(partial)
   partial_path = "_#{partial}.haml"
   haml_render(partial_path)
 end
