@@ -16,8 +16,8 @@ def haml_render(template_path, args = {})
 end
 
 
-def container name, path, &block
-  #puts path
-  base = ActionView::Base::new(path)
-  base.render :layout => name, &block
+def container template_path, args, &block
+  Haml::Engine.new(File.read(template_path)).render Object.new, args do
+    capture_haml( &block )
+  end
 end
