@@ -10,9 +10,9 @@ def include_js
   js_files = File.join("js","**", "*.js")
   Dir.glob js_files do |file|
     if ! base_js file
-      template += haml_render "#{template_path}/_js_script_tag.haml",  {js_file_path: file}
+      template += haml_render "#{template_path}/_js_script_tag.haml",  {:js_file_path => file}
     end
   end
-  template += haml_render "#{template_path}/_js_script_tag.haml",  {js_file_path: "js/pages.js"}
+  template += haml_render "#{template_path}/_js_script_tag.haml",  {:js_file_path => "js/pages.js"}
   template
 end
